@@ -62,7 +62,7 @@ public class Task {
     private int timeoutSeconds = 300;
 
     // DAG Dependencies: This task depends on these tasks
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name = "task_dependencies",
             joinColumns = @JoinColumn(name = "task_id"),
@@ -72,7 +72,7 @@ public class Task {
     private Set<Task> dependencies = new HashSet<>();
 
     // DAG Dependent Tasks: These tasks depend on this task
-    @ManyToMany(mappedBy = "dependencies", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "dependencies", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @Builder.Default
     private Set<Task> dependentTasks = new HashSet<>();
 
