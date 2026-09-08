@@ -2,7 +2,7 @@
 
 A highly scalable, distributed workflow orchestration engine inspired by concepts from AWS Step Functions, Temporal, and Celery. Built with Java 21 and Spring Boot.
 
-## 🚀 Key Features
+## Key Features
 - **DAG Dependency Resolution:** Dynamically maps and resolves complex Directed Acyclic Graph (DAG) task dependencies using a custom RDBMS join-table implementation.
 - **Event-Driven Architecture:** Decouples API ingestion from execution using **Apache Kafka** for massive asynchronous throughput.
 - **Strict At-Least-Once Delivery:** Uses Kafka manual acknowledgments (`MANUAL_IMMEDIATE`) paired with database idempotency locks to guarantee zero data loss during worker crashes.
@@ -11,7 +11,7 @@ A highly scalable, distributed workflow orchestration engine inspired by concept
 - **Observability:** Built-in Prometheus metrics and structured JSON logging (Logstash/ELK) for production telemetry.
 - **Rate Limiting:** Distributed Redis-backed sliding window rate limiter to prevent API abuse.
 
-## 🏗️ Architecture
+##  Architecture
 
 ### High-Level System Design
 1. **API Layer:** Stateless REST API secured by JWTs.
@@ -30,13 +30,13 @@ If deployed to AWS, this local architecture maps directly to managed services:
 - **Load Balancer** -> AWS ALB
 - **Observability** -> Amazon CloudWatch (Logs) & Amazon Managed Grafana (Prometheus)
 
-## 🛠️ Tech Stack
+##  Tech Stack
 - **Backend:** Java 21, Spring Boot 3.3, Spring Security, Spring Data JPA, Spring Kafka
 - **Infrastructure:** PostgreSQL 15, Apache Kafka (KRaft), Redis 7
 - **Testing:** JUnit 5, Mockito, Testcontainers
 - **Build/Deploy:** Maven, Docker, GitHub Actions
 
-## 🚦 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Docker & Docker Compose
